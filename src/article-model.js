@@ -1,7 +1,8 @@
 (function(exports) {
 
-function Article(headline){
+function Article(headline, content){
 this.headline = headline;
+this.content = content;
 }
 
 
