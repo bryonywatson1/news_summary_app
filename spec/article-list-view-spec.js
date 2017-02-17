@@ -15,4 +15,10 @@ describe("ArticleListView", function() {
     articleList.createArticle("HEADLINE", "Content");
     expect(articleListView.returnHTML()).toEqual("<ul><li><div>HEADLINE</div><div>Content</div></li></ul>")
   });
+
+  it("should return a string of HTML for multiple articles", function() {
+    articleList.createArticle("HEADLINE1", "Content1");
+    articleList.createArticle("HEADLINE2", "Content2");
+    expect(articleListView.returnHTML()).toEqual("<ul><li><div>HEADLINE1</div><div>Content1</div></li><li><div>HEADLINE2</div><div>Content2</div></li></ul>")
+  });
 });

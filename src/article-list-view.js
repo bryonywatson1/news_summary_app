@@ -5,7 +5,13 @@
   };
 
   ArticleListView.prototype.returnHTML = function() {
-    return `<ul><li><div>${this.articleList.showArticles()[0].showHeadline()}</div><div>${this.articleList.showArticles()[0].showContent()}</div></li></ul>`
+    var htmlString = ""
+    var startString = "<ul>"
+    var endString = "</ul>"
+    this.articleList.showArticles().forEach(function(article) {
+      htmlString += `<li><div>${article.showHeadline()}</div><div>${article.showContent()}</div></li>`
+    });
+    return startString + htmlString + endString;
   };
 
   exports.ArticleListView = ArticleListView;
