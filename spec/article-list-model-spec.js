@@ -3,6 +3,7 @@ describe("ArticleList", function() {
 
   beforeEach(function() {
     articleList = new ArticleList();
+    var article = jasmine.createSpyObj("article", ["showHeadline", "showContent"]);
   })
 
   it("should have an array for storing articles", function() {
