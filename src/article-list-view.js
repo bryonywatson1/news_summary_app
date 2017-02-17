@@ -5,7 +5,13 @@
   }
 
 ArticleListView.prototype.returnHTML = function(){
-return `<ul><li><div>${this.articleList.showArticles()[0].showContent()}</div></li>`
+  var htmlString = ""
+  var startString = "<ul>"
+  this.articleList.showArticles().forEach(function(article){
+    htmlString += `<li><div>${article.showContent()}</div></li>`
+  })
+  return startString + htmlString + "</ul>"
+
 }
 
 
