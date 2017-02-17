@@ -10,7 +10,7 @@ describe("Article", function (){
   })
 
   it("should take content upon instantiation", function() {
-    expect(article.content).toEqual("Content");
+    expect(article.showContent()).toEqual("Content");
   })
 
 })
