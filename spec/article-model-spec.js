@@ -6,10 +6,10 @@ describe("Article", function() {
   });
 
   it("should take a headline upon instantiation", function() {
-    expect(article.headline).toEqual("HEADLINE");
+    expect(article.showHeadline()).toEqual("HEADLINE");
   });
 
   it("should take content upon instantiation", function() {
     expect(article.content).toEqual("Content");
-  })
+  });
 })
