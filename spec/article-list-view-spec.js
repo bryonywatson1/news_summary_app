@@ -1,13 +1,18 @@
 describe("ArticleListView", function() {
   var articleListView;
-  var articleListDouble;
+  var articleList;
 
   beforeEach(function() {
-    articleListDouble = jasmine.createSpyObj('articleList', ['showArticles', 'createArticle']);
-    articleListView = new ArticleListView(articleListDouble);
+    articleList = new ArticleList();
+    articleListView = new ArticleListView(articleList);
   });
 
   it("should take an article list model upon instantiation", function() {
-    expect(articleListView._articleList).toEqual(articleListDouble);
+    expect(articleListView.articleList).toEqual(articleList);
+  });
+
+  it("should return an HTML string with the article's headline and content", function() {
+    articleList.createArticle("HEADLINE", "Content");
+    expect(articleListView.returnHTML()).toEqual("<ul><li><div>HEADLINE</div><div>Content</div></li></ul>")
   });
 });
