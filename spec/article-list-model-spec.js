@@ -9,4 +9,9 @@ describe("ArticleList", function() {
     expect(articleList.showArticles()).toEqual([]);
   });
 
+  it("should be able to create an article", function() {
+    articleList.createArticle("HEADLINE", "Content");
+    expect(articleList.showArticles().length).toEqual(1);
+  });
+
 });
