@@ -12,7 +12,10 @@
   }
 
   ArticleController.prototype.createArticle = function(headline, content) {
-    this.articleList.createArticle(headline, content);
+    var controller = this;
+    this.allHeadlines.forEach(function(article) {
+      controller.articleList.createArticle(article.webTitle, content);
+    })
   };
 
   ArticleController.prototype.convertToHTML = function() {
@@ -20,7 +23,7 @@
   };
 
   ArticleController.prototype.getNews = function() {
-    return this.todaysNews.xhr.guardianNews.response.results[0].webTitle;
+    this.allHeadlines = this.todaysNews.xhr.guardianNews.response.results;
   }
 
   exports.ArticleController = ArticleController;
