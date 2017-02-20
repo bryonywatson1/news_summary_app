@@ -6,7 +6,7 @@
 
   ArticleController.prototype.replaceText = function() {
     var news = document.getElementById("app");
-    greeting.innerHTML = "Article"
+    news.innerHTML = "Article"
   }
 
   ArticleController.prototype.createArticle = function(headline, content) {
