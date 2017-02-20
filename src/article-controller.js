@@ -3,9 +3,8 @@
   function ArticleController(){
     this.articleList = new ArticleList();
     this.articleListView = new ArticleListView(this.articleList);
+    this.todaysNews = new TodaysNews();
   }
-
-  
 
   ArticleController.prototype.showListOfArticles = function() {
     var news = document.getElementById("app");
@@ -19,6 +18,10 @@
   ArticleController.prototype.convertToHTML = function() {
     return this.articleListView.returnHTML();
   };
+
+  ArticleController.prototype.getNews = function() {
+    return this.todaysNews.xhr.guardianNews.response.results[0].webTitle;
+  }
 
   exports.ArticleController = ArticleController;
 })(this);
