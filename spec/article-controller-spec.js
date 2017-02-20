@@ -8,4 +8,6 @@ describe("ArticleController", function() {
   it("can be instantiated", function() {
     expect(articleController).toBeTruthy();
   });
+
+
 });

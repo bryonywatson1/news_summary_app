@@ -5,6 +5,8 @@
     this.articleListView = new ArticleListView(this.articleList);
   }
 
+  
+
   ArticleController.prototype.showListOfArticles = function() {
     var news = document.getElementById("app");
     news.innerHTML = this.convertToHTML();
