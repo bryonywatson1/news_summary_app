@@ -11,10 +11,10 @@
     news.innerHTML = this.convertToHTML();
   }
 
-  ArticleController.prototype.createArticle = function(headline, content) {
+  ArticleController.prototype.createArticle = function(headline, content, picture) {
     var controller = this;
     this.allHeadlines.forEach(function(article) {
-      controller.articleList.createArticle(article.webTitle, content);
+      controller.articleList.createArticle(article.webTitle, content, article.fields.thumbnail);
     })
   };
 

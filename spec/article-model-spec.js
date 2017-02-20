@@ -2,7 +2,7 @@ describe("Article", function() {
   var article;
 
   beforeEach(function() {
-    article = new Article("HEADLINE", "Content");
+    article = new Article("HEADLINE", "Content", "Picture");
   });
 
   it("should take a headline upon instantiation", function() {

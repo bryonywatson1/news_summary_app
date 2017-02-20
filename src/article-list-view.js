@@ -9,7 +9,7 @@
     var startString = "<ul>"
     var endString = "</ul>"
     this.articleList.showArticles().forEach(function(article) {
-      htmlString += `<li><div>${article.showHeadline()}</div><div>${article.showContent()}</div></li>`
+      htmlString += `<li><div>${article.showHeadline()}</div><div>${article.showContent()}</div><div><img src="${article.showPicture()}"></div></li>`
     });
     return startString + htmlString + endString;
   };

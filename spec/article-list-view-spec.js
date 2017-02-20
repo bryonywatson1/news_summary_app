@@ -12,13 +12,13 @@ describe("ArticleListView", function() {
   });
 
   it("should return an HTML string with the article's headline and content", function() {
-    articleList.createArticle("HEADLINE", "Content");
-    expect(articleListView.returnHTML()).toEqual("<ul><li><div>HEADLINE</div><div>Content</div></li></ul>")
+    articleList.createArticle("HEADLINE", "Content", "picture");
+    expect(articleListView.returnHTML()).toEqual('<ul><li><div>HEADLINE</div><div>Content</div><div><img src="picture"></div></li></ul>')
   });
 
   it("should return a string of HTML for multiple articles", function() {
-    articleList.createArticle("HEADLINE1", "Content1");
-    articleList.createArticle("HEADLINE2", "Content2");
-    expect(articleListView.returnHTML()).toEqual("<ul><li><div>HEADLINE1</div><div>Content1</div></li><li><div>HEADLINE2</div><div>Content2</div></li></ul>")
+    articleList.createArticle("HEADLINE1", "Content1", "picture");
+    articleList.createArticle("HEADLINE2", "Content2", "picture");
+    expect(articleListView.returnHTML()).toEqual('<ul><li><div>HEADLINE1</div><div>Content1</div><div><img src="picture"></div></li><li><div>HEADLINE2</div><div>Content2</div><div><img src="picture"></div></li></ul>')
   });
 });
